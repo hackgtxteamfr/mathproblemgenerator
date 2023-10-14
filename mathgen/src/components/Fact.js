@@ -1,5 +1,5 @@
 import React from 'react';
-import '../fact.css';
+//import './fact.css';
 
 export default function Fact() {
     return (

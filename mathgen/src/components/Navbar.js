@@ -1,7 +1,7 @@
 import React from 'react';
 import Fact from './Fact';
-import '../navbar.css';
-import { Link } from "react-router-dom";
+//import './navbar.css';
+import Link from 'next/link'
 
 const handleClick = (e) => {
     
@@ -15,9 +15,7 @@ export default function Navbar() {
             </div>
             <h1>Math Problem Generator</h1>
             <div className="login">
-                <Link to="/login">
-                    Login
-                </Link>
+            <Link href="./login">Log In</Link>
                 <a href="#">
                     <img src="./profile.png" className="icon"/>
                 </a>

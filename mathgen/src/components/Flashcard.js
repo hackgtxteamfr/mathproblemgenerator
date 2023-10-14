@@ -1,5 +1,5 @@
 import React from 'react';
-import '../flashcard.css';
+//import './flashcard.css';
 
 export default function Flashcard() {
     return (
