@@ -4,6 +4,9 @@ import Link from 'next/link'
 export default function Login() {
     return (
         <div>
+            <div>
+                <Link href="./">{"< Back"}</Link>
+            </div>
             <h1>Login Page</h1>
 
             <div>
