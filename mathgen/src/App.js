@@ -1,14 +1,20 @@
 import logo from './logo.svg';
-import './App.css';
-import Navbar from './components/Navbar'
-import ContentView from './components/ContentView'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from './components/Home';
+import Login from './components/Login';
+import CreateAccount from './components/CreateAccount';
 
 function App() {
   	return (
-    	<div className="App">
-			<Navbar />
-			<ContentView />
-    	</div>
+		<div>
+		<BrowserRouter>
+		<Routes>
+			<Route path="/" element={<Home />}/>
+			<Route path="/login" element={<Login />} />
+			<Route path="/create-account" element={<CreateAccount />} />
+		</Routes>
+		</BrowserRouter>
+		</div>
   	);
 }
 
