@@ -1,7 +1,6 @@
-.factContainer {
+.flashcard {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     width: 20%;
     min-height: 25%;
     border-radius: .5em;
@@ -9,15 +8,17 @@
     padding: 0 1%;
 }
 
-.funFact {
+.flashcard > h1 {
     margin: 0;
     align-self: stretch;
     border-bottom: solid 1px black;
-    font-size: 24px;
-    font-weight: 600;
+    font-size: 30px;
+    font-weight: 700;
 }
 
-.fact {
+.flashcard > div {
     display: flex;
-    margin: auto 0;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-grow: 1;
 }
