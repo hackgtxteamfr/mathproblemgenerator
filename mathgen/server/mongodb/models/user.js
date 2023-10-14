@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema({
         required: true
     },
     points: {
-        type    : Integer,
+        type    : Number,
         required: true
     }
 })
