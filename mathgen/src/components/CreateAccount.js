@@ -50,8 +50,8 @@ export default function CreateAccount() {
                             setPassword(event.target.value)
                         }} />
                     <button onClick={() => {
-                        createUser(`../pages/api/user`, fn, ln, e, p, 0)
-                        logIn(`../pages/api/user/verify`, e, p)
+                        createUser(`./api/user`, fn, ln, e, p, 0)
+                        //logIn(`./api/users/verify`, e, p)
                         //window.location.pathname = '/'
                     }}>Sign up</button>
 
