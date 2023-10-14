@@ -3,9 +3,6 @@ import Fact from './Fact';
 //import './navbar.css';
 import Link from 'next/link'
 
-const handleClick = (e) => {
-    
-  }
 
 export default function Navbar() {
     return (
@@ -15,7 +12,7 @@ export default function Navbar() {
             </div>
             <h1>Math Problem Generator</h1>
             <div className="login">
-            <Link href="./login">Log In</Link>
+            <Link href="./login">Login</Link>
                 <a href="#">
                     <img src="./profile.png" className="icon"/>
                 </a>

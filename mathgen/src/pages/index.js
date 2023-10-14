@@ -4,6 +4,7 @@ import Home from '../components/Home';
 import Login from '../components/Login';
 import CreateAccount from '../components/CreateAccount';
 
+
 function App() {
   	return (
 	<div>
@@ -15,8 +16,8 @@ function App() {
       	<h1>Math Generator</h1>
       	<div>
 		  <Link href="/">Home</Link>
-		  <Link href="../components/login">Log In</Link>
-		  <Link href="../components/CreateAccount">Create Account</Link>
+		  <Link href="./login">Login</Link>
+		  <Link href="./create-account">Create Account</Link>
     	</div>
     </div>
   	);

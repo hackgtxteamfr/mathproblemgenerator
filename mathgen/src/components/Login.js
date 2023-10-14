@@ -8,7 +8,7 @@ export default function Login() {
 
             <div>
                 No account?
-                <Link href="./CreateAccount">Create Account</Link>
+                <Link href="./create-account">Create Account</Link>
             </div>
             <label for="email">Email:</label>
             <input type="text" id="email" name="email"/>
