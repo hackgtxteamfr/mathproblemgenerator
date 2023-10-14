@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useState } from 'react';
+import Link from 'next/link'
 
 async function logIn(url, e, p) {
     const res = await axios.post(url, {
@@ -11,12 +11,13 @@ async function logIn(url, e, p) {
 return res.data
 }
 
-async function createUser(url, fn, ln, e, p) {
+async function createUser(url, fn, ln, e, p, pts) {
         const res = await axios.post(url, {
             firstName: fn,
             lastName: ln,
             email: e,
-            password: p
+            password: p,
+            points: pts
         })
     return res.data
 }
@@ -29,7 +30,9 @@ export default function CreateAccount() {
 
     return (
         <div>
-            <Link href="./">{"< Back"}</Link>
+            <div>
+                <Link href="./">{"< Back"}</Link>
+            </div>
             <h1>Create an Account</h1>
             
             <input type = "text"  placeholder="first name" value={fn}
@@ -49,8 +52,9 @@ export default function CreateAccount() {
                             setPassword(event.target.value)
                         }} />
                     <button onClick={() => {
-                        createUser(`../api/user`, fn, ln, e, p, 0)
-                        logIn(`../api/user/verify`, e, p)
+                        createUser(`../pages/api/user`, fn, ln, e, p, 0)
+                        logIn(`../pages/api/user/verify`, e, p)
+                        window.location.pathname = '/'
                     }}>Sign up</button>
         </div>
     );
