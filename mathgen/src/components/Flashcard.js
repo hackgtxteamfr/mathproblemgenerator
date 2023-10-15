@@ -1,18 +1,3 @@
-<<<<<<< Updated upstream
-import React from 'react';
-//import './flashcard.css';
-
-export default function Flashcard() {
-    return (
-        <div className="flashcard">
-            <h1>2 + 2 =</h1>
-            <div>
-                <button>Answer 1</button>
-                <button>Answer 2</button>
-                <button>Answer 3</button>
-                <button>Answer 4</button>
-            </div>
-=======
 import { useState, useEffect } from 'react';
 import AnswerBox from './AnswerBox';
 
@@ -26,7 +11,6 @@ export default function Flashcard() {
     }
 
     function createAnswers() {
-        console.log("Ran");
         while (answers.length < 4) {
             if (question.operator === "+") {
                 answers.push({correct: true, value: question.first + question.second});
@@ -43,9 +27,10 @@ export default function Flashcard() {
             while (random !== 0 && random !== answers[0]) {
                 random = (Math.floor(Math.random() * 1000)) * Math.sign(answers[0]);
             }
-            answers.push({correct: false, value: random});
             if (random === 0) {
                 answers.push({correct: false, value: Math.random() * 1000});
+            } else {
+                answers.push({correct: false, value: random});
             }
             if (answers[0].value !== 0 || answers[1].value !== 0) {
                 if (question.operator === "/" || question.operator === "%") {
@@ -71,14 +56,13 @@ export default function Flashcard() {
     }, []);
 
     useEffect(() => {
-        // createAnswers();
+        createAnswers();
     }, [question]);
 
     return (
         <div className="flashcard">
             <h1>{question.first} {question.operator} {question.second}</h1>
             <AnswerBox answers={answers} />
->>>>>>> Stashed changes
         </div>
     );
 }
