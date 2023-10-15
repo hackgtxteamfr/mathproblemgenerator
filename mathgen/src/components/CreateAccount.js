@@ -29,10 +29,12 @@ export default function CreateAccount() {
     const [ p, setPassword ] = useState("")
 
     return (
-        <div>
-            <Link href="./">{"< Back"}</Link>
+         <div className='loginPage'>
+            <div className='loginHeader'>
+            <Link href="./" className='backButton'>{"< Back"}</Link>
             <h1>Create an Account</h1>
-            
+            </div>
+            <div className='fields'>
             <input type = "text"  placeholder="first name" value={fn}
                         onChange={(event) => {
                             setFirstName(event.target.value)
@@ -54,6 +56,7 @@ export default function CreateAccount() {
                         logIn(`./api/users/verify`, e, p)
                         window.location.pathname = '/'
                     }}>Sign up</button>
+                    </div>
 
         </div>
     );

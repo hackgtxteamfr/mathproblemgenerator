@@ -26,6 +26,8 @@ code {
   padding: 0 2%;
   box-sizing: border-box;
   border-bottom: 2px solid black;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #437F97;
 }
 
 .login {
@@ -33,6 +35,26 @@ code {
   justify-content: space-between;
   align-items: center;
   width: 10%;
+}
+
+
+.logBut {
+  display: flex;
+  background-color: #453A49;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  border-color: #282c34;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: white;
+}
+
+.logBut:hover {
+  background-color:#437F97;
+  transition: 0.7s;
 }
 
 .icon {
@@ -115,10 +137,11 @@ code {
   border-radius: .5em;
   border: solid 1px black;
   padding: 0 1%;
+  background-color: #AF7A6D;
 }
 
 .funFact {
-  margin: 0;
+  margin: 10px;
   align-self: stretch;
   border-bottom: solid 1px black;
   font-size: 24px;
@@ -140,4 +163,41 @@ code {
 .container > div {
   position: relative;
   bottom: 10vh;
+}
+
+.ind {
+  height: 100%;
+  background-image: linear-gradient(#B5DDA4, white);
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 150px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.loginPage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+.backButton {
+  display: flex;
+  padding-right: 10px;
+}
+
+.loginHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
 }
