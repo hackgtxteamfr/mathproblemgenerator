@@ -173,6 +173,7 @@ code {
 .fields {
   display: flex;
   flex-direction: column;
+  margin: 5% 0;
   width: 350px;
   height: 150px;
   justify-content: space-between;
@@ -186,18 +187,25 @@ code {
   height: 100%;
   align-items: center;
   justify-content: center;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 
 .backButton {
   display: flex;
-  padding-right: 10px;
+  margin-left: 2%;
+  width: 10%;
 }
+
 
 .loginHeader {
   display: flex;
   flex-direction: row;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
   padding: 10px;
+}
+
+.loginHeader > h1 {
+  margin: 0;
 }
