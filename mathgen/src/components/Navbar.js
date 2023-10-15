@@ -3,6 +3,7 @@ import Fact from './Fact';
 //import './navbar.css';
 import Link from 'next/link'
 import useSWR from 'swr'
+import axios from 'axios';
 
 
 export default function Navbar() {
@@ -11,8 +12,7 @@ export default function Navbar() {
         return res.data
     }
 
-    let { data, isLoading, isValidating } = useSWR(`./api/points/`, fetcher)
-    console.log(data)
+    let { data, isLoading, isValidating } = useSWR(`./api/points`, fetcher)
     if (isLoading) return <div><h2>Loading</h2></div>
 
     return (

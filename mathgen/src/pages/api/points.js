@@ -7,8 +7,6 @@ export default async function handler(req, res) {
         try {
             data = await getPoints(auth(req)._id)
         } catch (e) {
-            console.log(auth(req)._id)
-            console.log(e)
             return res.status(500).send("Unable to get points")
         }
         return res.status(200).send(data)

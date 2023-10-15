@@ -4,7 +4,6 @@ import { serialize } from "cookie"
 export default function verify(req, res) {
     try {
         const token = sign(req, process.env.SECRET, { expiresIn: '300s' })
-    
         const serialized = serialize("OurJWT", token, {
             httpOnly: true,
             secure: false, // change this in production
