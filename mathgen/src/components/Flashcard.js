@@ -11,44 +11,29 @@ export default function Flashcard() {
     }
 
     function createAnswers() {
-        while (answers.length < 4) {
-            if (question.operator === "+") {
-                answers.push({correct: true, value: question.first + question.second});
-            } else if (question.operator === "-") {
-                answers.push({correct: true, value: question.first - question.second});
-            } else if (question.operator === '*') {
-                answers.push({correct: true, value: question.first * question.second});
-            } else if (question.operator === "/") {
-                answers.push({correct: true, value: question.first / question.second});
-            } else {
-                answers.push({correct: true, value: question.first % question.second});
-            }
-            let random = (Math.floor(Math.random() * 1000)) * Math.sign(answers[0]);
-            while (random !== 0 && random !== answers[0]) {
-                random = (Math.floor(Math.random() * 1000)) * Math.sign(answers[0]);
-            }
-            if (random === 0) {
-                answers.push({correct: false, value: Math.random() * 1000});
-            } else {
+        if (question.operator === "+") {
+            answers.push({correct: true, value: question.first + question.second});
+        } else if (question.operator === "-") {
+            answers.push({correct: true, value: question.first - question.second});
+        } else if (question.operator === '*') {
+            answers.push({correct: true, value: question.first * question.second});
+        } else if (question.operator === "/") {
+            answers.push({correct: true, value: Math.floor(question.first / question.second)});
+        } else {
+            answers.push({correct: true, value: question.first % question.second});
+        }
+        let values = [];
+        values.push(answers[0].value);
+        while (values.length < 4) {
+            let random = (Math.floor(Math.random() * 1000));
+            if (!values.includes(random)) {
+                values.push(random);
                 answers.push({correct: false, value: random});
             }
-            if (answers[0].value !== 0 || answers[1].value !== 0) {
-                if (question.operator === "/" || question.operator === "%") {
-                    answers.push({correct: false, value: 0});
-                }
-            } else if (answers[0].value !== 1 || answers[1].value !== 1) {
-                answers.push({correct: false, value: 1});
-            }
-            if (random !== answers[0].value - 1 && answers[0].value - 1 !== 0 && answers[0].value - 1 !== 1) {
-                answers.push({correct: false, value: answers[0] - 1});
-            }
-            while (answers.length < 4) {
-                let random2 = (Math.floor(Math.random() * 1000));
-                if (answers[0].value !== random2 && answers[1].value !== random2 && answers[2].value !== random2) {
-                    answers.push({correct: false, value: random2});
-                }
-            }
         }
+        // answers.forEach((value) => {
+        //     console.log(value);
+        // });
     }
 
     useEffect(() => {
@@ -57,7 +42,7 @@ export default function Flashcard() {
 
     useEffect(() => {
         createAnswers();
-    }, [question]);
+    }, [question.first]);
 
     return (
         <div className="flashcard">
