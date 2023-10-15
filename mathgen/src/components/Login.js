@@ -36,7 +36,7 @@ export default function Login() {
                             setPassword(event.target.value)
                         }} />
             <button onClick={() => {
-                        logIn(`../api/user/verify`, e, p)
+                        logIn(`./api/users/verify`, e, p)
                         //window.location.pathname = '/'
                     }}>Log In</button>
             </div>
