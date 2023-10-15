@@ -11,7 +11,6 @@ export default function Flashcard() {
     }
 
     function createAnswers() {
-        console.log("hi");
         let actual = []; // Clear the previous answers
 
     let correctAnswer;
@@ -35,7 +34,6 @@ export default function Flashcard() {
             actual.push({ correct: false, value: random });
         }
     }
-    console.log(actual)
     // Shuffle the answers randomly
     actual.sort(() => Math.random() - 0.5);
     setAnswers(actual)
@@ -48,7 +46,6 @@ export default function Flashcard() {
     useEffect(() => {
         createAnswers();
     }, [question.first]);
-    console.log(answers)
     return (
         
         <div className="flashcard">
