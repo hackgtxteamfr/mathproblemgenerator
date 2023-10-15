@@ -12,7 +12,7 @@ export default function Navbar() {
             </div>
             <h1>Math Problem Generator</h1>
             <div className="login">
-            <Link href="./login">Login</Link>
+            <Link href="./login" className="logBut">Login</Link>
                 <a href="#">
                     <img src="./profile.png" className="icon"/>
                 </a>
