@@ -17,16 +17,14 @@ export default function Login() {
     const [ p, setPassword ] = useState("")
     
     return (
-        <div>
+        <div className='loginPage'>
+            <div className='loginHeader'>
             <div>
                 <Link href="./">{"< Back"}</Link>
             </div>
             <h1>Login Page</h1>
-
-            <div>
-                No account?
-                <Link href="./create-account">Create Account</Link>
             </div>
+            <div className="fields">
             <label for="email">Email:</label>
             <input type = "text"  placeholder="email" value={e}
                         onChange={(event) => {
@@ -41,6 +39,11 @@ export default function Login() {
                         logIn(`../api/user/verify`, e, p)
                         //window.location.pathname = '/'
                     }}>Log In</button>
+            </div>
+            <div>
+                No account?
+                <Link href="./create-account">Create Account</Link>
+            </div>
 
         </div>
     );

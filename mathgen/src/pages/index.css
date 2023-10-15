@@ -170,3 +170,26 @@ code {
   background-image: linear-gradient(#B5DDA4, white);
 }
 
+.fields {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 150px;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginPage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+.loginHeader {
+  display: flex;
+  flex-direction: row;
+}
