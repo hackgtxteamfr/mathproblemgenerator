@@ -19,7 +19,7 @@ export default function Login() {
     return (
         <div className='loginPage'>
             <div className='loginHeader'>
-            <div>
+            <div className='backButton'>
                 <Link href="./">{"< Back"}</Link>
             </div>
             <h1>Login Page</h1>
@@ -42,7 +42,7 @@ export default function Login() {
             </div>
             <div>
                 No account?
-                <Link href="./create-account">Create Account</Link>
+                <Link href="./create-account"> Create Account</Link>
             </div>
 
         </div>

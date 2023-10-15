@@ -31,7 +31,7 @@ export default function CreateAccount() {
     return (
          <div className='loginPage'>
             <div className='loginHeader'>
-            <Link href="./">{"< Back"}</Link>
+            <Link href="./" className='backButton'>{"< Back"}</Link>
             <h1>Create an Account</h1>
             </div>
             <div className='fields'>

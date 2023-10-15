@@ -175,7 +175,7 @@ code {
   flex-direction: column;
   width: 350px;
   height: 150px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -189,7 +189,15 @@ code {
   justify-content: space-around;
 }
 
+.backButton {
+  display: flex;
+  padding-right: 10px;
+}
+
 .loginHeader {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
 }
