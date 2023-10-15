@@ -19,23 +19,24 @@ export default function Login() {
     return (
         <div className='loginPage'>
             <div className='loginHeader'>
-            <div className='backButton'>
-                <Link href="./">{"< Back"}</Link>
-            </div>
-            <h1>Login Page</h1>
+                <div className='backButton'>
+                    <Link href="./">{"< Back"}</Link>
+                </div>
+                <h1>Login Page</h1>
+                <p className="backButton">&nbsp;</p>
             </div>
             <div className="fields">
-            <label for="email">Email:</label>
-            <input type = "text"  placeholder="email" value={e}
+                <label for="email">Email:</label>
+                <input type = "text"  placeholder="email" value={e}
                         onChange={(event) => {
                             setEmail(event.target.value)
                         }} />
-            <label for="pass">Password:</label>
-            <input type = "text" placeholder="password" value={p}
+                <label for="pass">Password:</label>
+                <input type = "text" placeholder="password" value={p}
                         onChange={(event) => {
                             setPassword(event.target.value)
                         }} />
-            <button onClick={() => {
+                <button onClick={() => {
                         logIn(`./api/users/verify`, e, p)
                         window.location.pathname = '/'
                     }}>Log In</button>

@@ -33,6 +33,7 @@ export default function CreateAccount() {
             <div className='loginHeader'>
             <Link href="./" className='backButton'>{"< Back"}</Link>
             <h1>Create an Account</h1>
+            <div className="backButton">&nbsp;</div>
             </div>
             <div className='fields'>
             <input type = "text"  placeholder="first name" value={fn}
@@ -51,12 +52,12 @@ export default function CreateAccount() {
                         onChange={(event) => {
                             setPassword(event.target.value)
                         }} />
+                    </div>
                     <button onClick={() => {
                         createUser(`./api/user`, fn, ln, e, p, 0)
                         logIn(`./api/users/verify`, e, p)
                         window.location.pathname = '/'
                     }}>Sign up</button>
-                    </div>
 
         </div>
     );
