@@ -5,6 +5,7 @@ export default function AnswerBox(props) {
     return (
         <div>
             {
+                
                 props.answers.map((answer) => {
                     console.log(answer);
                     return((answer.correct) ? 
