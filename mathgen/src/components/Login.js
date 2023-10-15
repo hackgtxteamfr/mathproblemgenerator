@@ -39,7 +39,7 @@ export default function Login() {
                         }} />
             <button onClick={() => {
                         logIn(`./api/users/verify`, e, p)
-                        window.location.pathname = '/'
+                        //window.location.pathname = '/'
                     }}>Log In</button>
 
         </div>
