@@ -1,3 +1,5 @@
+import React from 'react';
+//import './flashcard.css';
 import { useState, useEffect } from 'react';
 import AnswerBox from './AnswerBox';
 
@@ -24,7 +26,7 @@ export default function Flashcard() {
                 answers.push({correct: true, value: question.first % question.second});
             }
             let random = (Math.floor(Math.random() * 1000)) * Math.sign(answers[0]);
-            while (random !== 0 && random !== answers[0]) {
+            while (random === 0 || random === answers[0]) {
                 random = (Math.floor(Math.random() * 1000)) * Math.sign(answers[0]);
             }
             if (random === 0) {
@@ -32,14 +34,14 @@ export default function Flashcard() {
             } else {
                 answers.push({correct: false, value: random});
             }
-            if (answers[0].value !== 0 || answers[1].value !== 0) {
+            if (answers[0].value !== 0 || answers[1].value !== 0 && answers.length < 4) {
                 if (question.operator === "/" || question.operator === "%") {
                     answers.push({correct: false, value: 0});
                 }
-            } else if (answers[0].value !== 1 || answers[1].value !== 1) {
+            } else if (answers[0].value !== 1 || answers[1].value !== 1 && answers.length < 4) {
                 answers.push({correct: false, value: 1});
             }
-            if (random !== answers[0].value - 1 && answers[0].value - 1 !== 0 && answers[0].value - 1 !== 1) {
+            if (random !== answers[0].value - 1 && answers[0].value - 1 !== 0 && answers[0].value - 1 !== 1 && answers.length < 4) {
                 answers.push({correct: false, value: answers[0] - 1});
             }
             while (answers.length < 4) {
